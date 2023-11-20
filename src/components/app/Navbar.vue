@@ -5,14 +5,17 @@
 		<div class="container px-3">
 			<a href="index.html" class="navbar-brand pe-3">
 				<img
+					class="d-none"
 					src="/logo/feramo-logo-mini.png"
 					width="47"
 					alt="Firramo"
 				/>
-				Firramo
+				Ticks
 			</a>
 
-			<span class="badge text-dark border border-dark rounded-pill fs-6">$ 19,000</span>
+			<span class="badge text-dark border border-dark rounded-pill fs-6"
+				>$ 19,000</span
+			>
 		</div>
 	</header>
 </template>

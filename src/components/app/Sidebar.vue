@@ -41,6 +41,7 @@
 		<div class="d-flex justify-content-between">
 			<a href="/" class="navbar-brand pe-3">
 				<img
+					class="d-none"
 					src="/logo/feramo-logo-mini.png"
 					width="47"
 					alt="Firramo"
@@ -51,7 +52,7 @@
 			<div class="d-flex">
 				<button
 					type="button"
-					class="btn btn-outline-secondary shadow-smi p-0 ms-2 rounded-circle btn-icon mt-3 mb-3 position-relative"
+					class="btn btn-outline-secondary me-2 shadow-smi p-0 ms-2 rounded-circle btn-icon mt-3 mb-3 position-relative"
 				>
 					<img
 						:src="user.getUser().imgUrl || tempImg"
