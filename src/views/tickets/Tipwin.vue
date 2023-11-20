@@ -4,6 +4,8 @@
 	import moment from "moment";
 	import currency from "currency.js";
 
+	// import "bootstrap/dist/css/bootstrap.min.css";
+
 	const key = "tipwin32";
 	const images = 9;
 	const barcodeImg = ref("");
@@ -117,22 +119,22 @@
 </script>
 
 <template>
-	<div class="d-flex flex-row justify-content-center">
-		<div class="vh-100 d-flex flex-column me-1">
+	<div class="d-flex text-dark flex-row justify-content-center pe-2">
+		<div class="vh-100 d-flex flex-column pe-1">
 			<div v-for="i in images" class="mb-4">
 				<!-- <-- width="300" -->
-				<img height="50" src="/assets/logo.png" alt="" />
+				<img style="height: 51px" src="/tickets/logo.png" alt="" />
 			</div>
 		</div>
 		<div
 			id="tipwin"
 			class="d-flex flex-row justify-content-center my-5 w-100"
 		>
-			<div class="w-100 p-n2">
-				<div class="d-flex mb-4 flex-column text-center w-100 mx-n3">
+			<div class="w-100">
+				<div class="d-flex mb-4 flex-column text-center w-100">
 					<div class="mb-3 w-100">
 						<!-- <-- width="300" -->
-						<img width="200" src="/assets/tipwin-rb.jpeg" alt="" />
+						<img width="200" src="/tickets/tipwin-rb.jpeg" alt="" />
 					</div>
 					<div class="fw-bold">
 						Möllerstr.26.58199 Hagen <br />
@@ -142,7 +144,7 @@
 
 				<div class="px-0">
 					<table class="table border-dark align-bottom mb-0">
-						<thead>
+						<tbody>
 							<tr class="border-0">
 								<th
 									colspan="3"
@@ -151,7 +153,7 @@
 									<div class="mb-4" style="font-size: 0.8rem">
 										Nr.:
 										<span
-											class="me-0"
+											class="pe-0"
 											@click="editGame(ticket, 'id')"
 											>{{ ticket.id }}</span
 										><span @click="editGame(ticket, 'pin')"
@@ -166,28 +168,26 @@
 									</div>
 								</th>
 							</tr>
-							<tr>
+							<tr class="">
 								<th class="fw-normal" scope="col" colspan="3">
 									Einsatz:
 									<span>{{ money(ticket.stake) }}</span> x
 									1=<span>{{ money(ticket.stake) }}</span>
 								</th>
 							</tr>
-						</thead>
-						<tbody>
 							<tr v-for="game in ticket.games">
 								<td>
 									<div class="fw-bold">
 										<span
 											@click="editGame(game, 'id')"
-											class="me-1"
+											class="pe-1"
 										>
 											{{ game.id }}
 										</span>
 										<span @click="editGame(game, 'home')">
 											{{ game.home }}
 										</span>
-										<span class="mx-1">-</span>
+										<span class="px-1">-</span>
 										<span @click="editGame(game, 'away')">
 											{{ game.away }}
 										</span>
@@ -258,15 +258,17 @@
 <style scoped>
 	@import url("https://fonts.googleapis.com/css2?family=Blinker&family=Cantarell:wght@400;700&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
 
-	.rotate-90 {
-		transform: rotate(90deg);
-		-webkit-transform: rotate(90deg);
-	}
 	th,
 	tr,
 	td {
 		padding: 0 !important;
 		margin: 0;
+		color: black;
+	}
+	th,
+	tr,
+	.border-dark {
+		border-color: black;
 	}
 
 	#tipwin {
@@ -277,6 +279,7 @@
 	}
 </style>
 
-<style>
+<style scoped>
+	/* @import "bootstrap/dist/css/bootstrap.min.css"; */
 	@import url("https://fonts.googleapis.com/css2?family=Blinker&family=Cantarell:wght@400;700&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
 </style>

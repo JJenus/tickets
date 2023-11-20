@@ -137,7 +137,7 @@
 					<!-- <-- width="300" -->
 					<img
 						class="logo-img"
-						src="/assets/bovada/logo_vada.png"
+						src="/tickets/bovada/logo_vada.png"
 						alt=""
 					/>
 				</div>
@@ -149,7 +149,7 @@
 							<!-- <-- width="300" -->
 							<img
 								width="250"
-								src="/assets/bovada/bovada.svg"
+								src="/tickets/bovada/bovada.svg"
 								alt=""
 							/>
 						</div>
@@ -320,11 +320,6 @@
 
 <style scoped>
 	@import url("https://fonts.googleapis.com/css2?family=Blinker&family=Cantarell:wght@400&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
-
-	* {
-		/* font-size: small; */
-	}
-
 	.logo-stamp {
 		margin: 0px;
 		padding: 0px;
@@ -334,18 +329,7 @@
 	.logo-img {
 		height: 100px;
 	}
-	.rotate-90 {
-		position: relative;
-		transform: rotate(-90deg);
-		-webkit-transform: rotate(90deg);
-		/* transform-origin: top left; */
-		width: 115px;
-		height: 210px;
-	}
-	.rotate-container {
-		left: -10px;
-		top: -12px;
-	}
+
 	th,
 	tr,
 	td {

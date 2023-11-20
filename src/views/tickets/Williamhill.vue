@@ -105,7 +105,7 @@
 	<div class="bordered no-border" align="center" style="margin-bottom: 0px">
 		<img
 			style="width: 90%; margin-bottom: 4px"
-			src="/assets/hill/download.png"
+			src="/tickets/hill/download.png"
 		/>
 		<div style="margin-bottom: 20px">THE HOME OF BETTING</div>
 	</div>
@@ -240,7 +240,7 @@
 						<span>responsibly. www.gambleaware.com</span>
 					</div>
 					<div style="text-align: center">
-						<img class="bcode" src="/assets/hill/barcode.jpg" />
+						<img class="bcode" src="/tickets/hill/barcode.jpg" />
 					</div>
 				</td>
 			</tr>
