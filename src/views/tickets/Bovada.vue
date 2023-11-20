@@ -107,7 +107,7 @@
 			});
 			barcodeImg.value = canvas.toDataURL("image/png");
 		} catch (e) {
-			console.log(e);
+			window.debug.log(e);
 		}
 	}
 

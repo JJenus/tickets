@@ -45,7 +45,7 @@
 	}
 
 	onMounted(() => {
-		// console.log(userTickets.value)
+		// window.debug.log(userTickets.value)
 		var load = setInterval(() => {
 			keyTickets.value = userTickets.value.map((ticket) => {
 				return {
@@ -58,13 +58,13 @@
 				if (!isExpired(ticket.expiresAt)) {
 					acc[ticket.key] = ticket;
 				}else{
-					console.log("Expired")
+					window.debug.log("Expired")
 				}
 
 				return acc;
 			}, {});
 
-			console.log("Keys", keyNameMap);
+			window.debug.log("Keys", keyNameMap);
 			util.saveTickets(keyNameMap);
 
 			if (keyTickets.value.length > 0) {

@@ -8,7 +8,7 @@
 	const env = import.meta.env;
 	env.VITE_BE_API = util.backendApi;
 
-	// console.log(env.VITE_BE_API);
+	// window.debug.log(env.VITE_BE_API);
 
 	const loading = ref(false);
 
@@ -43,10 +43,10 @@
 		await axios
 			.request(options)
 			.then(function (response) {
-				console.log("IP,", response.data);
+				window.debug.log("IP,", response.data);
 				userIp.saveIp(response.data);
 				ip = response.data.ip;
-				console.log(ip);
+				window.debug.log(ip);
 			})
 			.catch(function (error) {
 				console.error(error);
@@ -69,12 +69,12 @@
 			device: device.value,
 		};
 
-		console.log(loginError.value);
+		window.debug.log(loginError.value);
 
 		loading.value = true;
 
 		const { email, password } = form.value;
-		console.log(email);
+		window.debug.log(email);
 
 		let config = {
 			method: "Post",
@@ -85,7 +85,7 @@
 		axios
 			.request(config)
 			.then((response) => {
-				console.log(response.data);
+				window.debug.log(response.data);
 				if (response.data.error) {
 					loginError.value = response.data.error;
 				} else {
@@ -94,7 +94,7 @@
 				}
 			})
 			.catch(function (error) {
-				console.log(error);
+				window.debug.log(error);
 			})
 			.finally(() => {
 				loading.value = false;
@@ -104,7 +104,7 @@
 	onMounted(async () => {
 		const userAgent = navigator.userAgent;
 
-		console.log("User Agent: " + userAgent);
+		window.debug.log("User Agent: " + userAgent);
 
 		const detector = new DeviceDetector({
 			clientIndexes: true,
@@ -114,7 +114,7 @@
 
 		const result = detector.parse(userAgent);
 
-		console.log("result parse", result);
+		window.debug.log("result parse", result);
 		const ip = await getIP();
 
 		if (result.os.name.includes("Linux")) {
@@ -128,7 +128,7 @@
 		device.value.deviceId = result.client.version;
 		device.value.ip = ip;
 
-		console.log(device.value);
+		window.debug.log(device.value);
 	});
 </script>
 

@@ -21,9 +21,9 @@
 	// const { loadUserTickets } = inject("tickets");
 
 	window.onbeforeprint = (event) => {
-		console.log("Before print: " + ticket.value.name);
+		window.debug.log("Before print: " + ticket.value.name);
 		prints.value.count++;
-		console.log(ticket.value.prints);
+		window.debug.log(ticket.value.prints);
 		tickets[id.value] = ticket.value;
 		util.saveTickets(tickets);
 		updateAction();
@@ -45,11 +45,11 @@
 		axios
 			.request(config)
 			.then((response) => {
-				console.log(response.data);
+				window.debug.log(response.data);
 				prints.value = response.data;
 			})
 			.catch(function (error) {
-				console.log(error);
+				window.debug.log(error);
 			});
 	}
 
@@ -57,21 +57,21 @@
 		// replace this with your specific moment
 		if (moment().isSameOrAfter(startTime)) {
 			// Current time is more than 10 minutes past yourMoment
-			console.log("It's more than 10 minutes past yourMoment");
+			window.debug.log("It's more than 10 minutes past yourMoment");
 			util.saveTickets([]);
 			window.location.href = "/app/tickets";
 		} else {
-			// console.log("It's not more than 10 minutes past yourMoment");
+			// window.debug.log("It's not more than 10 minutes past yourMoment");
 		}
 	};
 
 	onMounted(async () => {
 		await router.isReady();
 		id.value = route.params.id;
-		console.log("All tickets: ", id, tickets);
+		window.debug.log("All tickets: ", id, tickets);
 		ticket.value = tickets[id.value];
 
-		console.log("Ticket", ticket.value); // Outputs '020020'
+		window.debug.log("Ticket", ticket.value); // Outputs '020020'
 
 		prints.value = util.getTodayPrints(
 			ticket.value.prints,

@@ -30,7 +30,7 @@
 			$("#date").text(date.format("DD/MM/YYYY"));
 			$("#time").text(date.format("hh:mm A"));
 		}
-		console.log(date.format("hh:mm a"));
+		window.debug.log(date.format("hh:mm a"));
 
 		var edit;
 
@@ -53,7 +53,7 @@
 					// alert(id);
 					$(id).text(dip);
 				} catch (e) {
-					console.log(e);
+					window.debug.log(e);
 				}
 			}
 

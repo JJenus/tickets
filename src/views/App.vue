@@ -44,7 +44,7 @@ import { util } from "../stores/utility";
 				}
 			})
 			.catch(function (error) {
-				console.log(error);
+				window.debug.log(error);
 			});
 	}
 
@@ -58,7 +58,7 @@ import { util } from "../stores/utility";
 			.request(config)
 			.then((response) => {
 				appUser.value = response.data;
-				// console.log("User", appUser.value);
+				// window.debug.log("User", appUser.value);
 			})
 			.catch(function (error) {});
 	}
@@ -73,10 +73,10 @@ import { util } from "../stores/utility";
 			.request(config)
 			.then((response) => {
 				tickets.value = response.data;
-				// console.log(tickets.value)
+				// window.debug.log(tickets.value)
 			})
 			.catch(function (error) {
-				console.log(error);
+				window.debug.log(error);
 			});
 	}
 
@@ -90,10 +90,10 @@ import { util } from "../stores/utility";
 			.request(config)
 			.then((response) => {
 				userTickets.value = response.data;
-				console.log(userTickets.value);
+				window.debug.log(userTickets.value);
 			})
 			.catch(function (error) {
-				console.log(error);
+				window.debug.log(error);
 			});
 	}
 

@@ -47,7 +47,7 @@
 		// 		}
 		// 	})
 		// 	.catch(function (error) {
-		// 		console.log(error);
+		// 		window.debug.log(error);
 		// 	});
 	}
 
@@ -60,14 +60,14 @@
 		axios
 			.request(config)
 			.then((response) => {
-				// console.log(response.data);
+				// window.debug.log(response.data);
 				users.value = response.data.filter((user) => {
 					return user.roles[0].name === "ADMIN";
 				});
 				localStorage.setItem(lKey, JSON.stringify(users.value));
 			})
 			.catch(function (error) {
-				console.log(error);
+				window.debug.log(error);
 			});
 	}
 
@@ -83,7 +83,7 @@
 				wallets.value = response.data;
 			})
 			.catch(function (error) {
-				console.log(error);
+				window.debug.log(error);
 			});
 	}
 
