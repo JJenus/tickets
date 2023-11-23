@@ -5,6 +5,9 @@
 	import { alert, util } from "../stores/utility";
 	import Bovada from "../views/tickets/Bovada.vue";
 	import TipWin from "../views/tickets/Tipwin.vue";
+	import Oddset from "../views/tickets/Oddset.vue";
+	import Williamhill from "../views/tickets/Williamhill.vue";
+
 	import moment from "moment";
 
 	const env = import.meta.env;
@@ -88,6 +91,8 @@
 	<div :class="prints.count > maxPrints ? 'd-none' : ''" v-if="ticket.ticket">
 		<Bovada v-if="ticket.ticket.name === 'Bovada'" />
 		<TipWin v-if="ticket.ticket.name === 'Tipwin'" />
+		<Oddset v-if="ticket.ticket.name === 'Williamhill'" />
+		<Williamhill v-if="ticket.ticket.name === 'Oddset'" />
 	</div>
 </template>
 
