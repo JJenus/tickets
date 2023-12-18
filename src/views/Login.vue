@@ -52,6 +52,8 @@
 				console.error(error);
 			});
 
+		console.log(ip);
+
 		return ip;
 	}
 
@@ -94,7 +96,9 @@
 				}
 			})
 			.catch(function (error) {
-				window.debug.log(error);
+				// console.log(error); 
+				window.debug.log(error.response.data);
+				loginError.value = error.response.data.message;
 			})
 			.finally(() => {
 				loading.value = false;
@@ -128,7 +132,7 @@
 		device.value.deviceId = result.client.version;
 		device.value.ip = ip;
 
-		window.debug.log(device.value);
+		console.log(result);
 	});
 </script>
 
